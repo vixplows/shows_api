@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Favourite.delete_all()
+User.delete_all()
 Show.delete_all()
 
 s1 = Show.create(
@@ -27,4 +29,7 @@ s2 = Show.create(
                     programmeID: "123b"
                   }
                 )
-                
+
+u1 = User.create({name: "John Snow"})
+
+Favourite.create({date: "2017-01-02", user: u1, show: s2})
